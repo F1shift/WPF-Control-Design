@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:ButtonDesign"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary Source="NavigateButtonTemplates.xaml"/>
+    </Window.Resources>
     <Grid>
-        <Button x:Name="button" Content="Button" Background="#FFF1F1F1" Width="40" Height="40" Template="{DynamicResource NavigateBackward}" BorderThickness="1" BorderBrush="#FF4F4F4F"/>
-
+        <local:NavigateButton OuterStrokeThickness="30" InnerStrokeThickness="30" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" BorderBrush="#FF686868" Background="#02000000" Click="NavigateButton_Click"/>
     </Grid>
 </Window>

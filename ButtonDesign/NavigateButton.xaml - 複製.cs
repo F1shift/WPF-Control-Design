@@ -20,21 +20,12 @@ namespace ButtonDesign
     /// </summary>
     public partial class NavigateButton : Button
     {
-        private static FrameworkPropertyMetadata OuterStrokeThicknessPropertyMetaData =
+        private static FrameworkPropertyMetadata propertyMetaData =
             new FrameworkPropertyMetadata(
                 1.0,
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault | FrameworkPropertyMetadataOptions.Journal,
-                new PropertyChangedCallback(OuterStrokeThickness_PropertyChanged),
-                new CoerceValueCallback(OuterStrokeThickness_CoerceValue),
-                false,
-                UpdateSourceTrigger.PropertyChanged
-                );
-        private static FrameworkPropertyMetadata InnerStrokeThicknessPropertyMetaData =
-            new FrameworkPropertyMetadata(
-                1.0,
-                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault | FrameworkPropertyMetadataOptions.Journal,
-                new PropertyChangedCallback(OuterStrokeThickness_PropertyChanged),
-                new CoerceValueCallback(OuterStrokeThickness_CoerceValue),
+                new PropertyChangedCallback(StrokeThickness_PropertyChanged),
+                new CoerceValueCallback(StrokeThickness_CoerceValue),
                 false,
                 UpdateSourceTrigger.PropertyChanged
                 );
@@ -44,16 +35,16 @@ namespace ButtonDesign
                 "OuterStrokeThickness",
                 typeof(double),
                 typeof(NavigateButton),
-                OuterStrokeThicknessPropertyMetaData,
-                new ValidateValueCallback(OuterStrokeThicknessValidate)
+                propertyMetaData,
+                new ValidateValueCallback(StrokeThickness_Validate)
                 );
         public static readonly DependencyProperty InnerStrokeThicknessProperty =
             DependencyProperty.Register(
                 "InnerStrokeThickness",
                 typeof(double),
                 typeof(NavigateButton),
-                InnerStrokeThicknessPropertyMetaData,
-                new ValidateValueCallback(InnerStrokeThicknessValidate)
+                propertyMetaData,
+                new ValidateValueCallback(StrokeThickness_Validate)
                 );
 
         public double OuterStrokeThickness
@@ -68,32 +59,17 @@ namespace ButtonDesign
             set { this.SetValue(InnerStrokeThicknessProperty, value); }
         }
 
-        public static void OuterStrokeThickness_PropertyChanged(DependencyObject dobj, DependencyPropertyChangedEventArgs e)
+        public static void StrokeThickness_PropertyChanged(DependencyObject dobj, DependencyPropertyChangedEventArgs e)
         {
 
         }
 
-        public static object OuterStrokeThickness_CoerceValue(DependencyObject dobj, object value)
-        {
-            return value;
-        }
-
-        public static bool OuterStrokeThicknessValidate(object o)
-        {
-            return Convert.ToDouble(o) >= 0;
-        }
-
-        public static void InnerStrokeThickness_PropertyChanged(DependencyObject dobj, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
-        public static object InnerStrokeThickness_CoerceValue(DependencyObject dobj, object value)
+        public static object StrokeThickness_CoerceValue(DependencyObject dobj, object value)
         {
             return value;
         }
 
-        public static bool InnerStrokeThicknessValidate(object o)
+        public static bool StrokeThickness_Validate(object o)
         {
             return Convert.ToDouble(o) >= 0;
         }

@@ -24,5 +24,10 @@ namespace ButtonDesign
         {
             InitializeComponent();
         }
+
+        private void NavigateButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Clicked");
+        }
     }
 }
