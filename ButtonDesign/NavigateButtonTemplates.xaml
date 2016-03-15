@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ButtonDesign">
+    <ControlTemplate x:Key="NavigateBackward" TargetType="{x:Type Button}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+            <Ellipse Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="5" StrokeDashCap="Round" Fill="{TemplateBinding Background}"/>
+            <Path Grid.Row="1" Grid.Column="1" Data="M25,10 L14,20 L25,30" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="5" StrokeLineJoin="Round" Stretch="Fill"/>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

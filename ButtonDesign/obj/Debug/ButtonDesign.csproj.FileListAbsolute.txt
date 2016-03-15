@@ -1,0 +1,34 @@
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.exe.config
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.exe
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.pdb
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.csprojResolveAssemblyReference.cache
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\MainWindow.g.cs
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\App.g.cs
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign_MarkupCompile.cache
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign_MarkupCompile.lref
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\App.baml
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\SimpleButtonStyles.baml
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\MainWindow.baml
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.g.resources
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.Properties.Resources.resources
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.csproj.GenerateResource.Cache
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.exe
+C:\Users\F1shift\Desktop\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.pdb
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.exe.config
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.exe
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.pdb
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.exe
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\bin\Debug\ButtonDesign.pdb
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.csprojResolveAssemblyReference.cache
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\NavigateButton.g.cs
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\MainWindow.g.cs
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\App.g.cs
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign_MarkupCompile.cache
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign_MarkupCompile.lref
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\App.baml
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\NavigateButton.baml
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\NavigateButtonTemplates.baml
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\MainWindow.baml
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.g.resources
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.Properties.Resources.resources
+C:\Users\F1shift\Google Drive\C#\ButtonDesign\ButtonDesign\obj\Debug\ButtonDesign.csproj.GenerateResource.Cache
