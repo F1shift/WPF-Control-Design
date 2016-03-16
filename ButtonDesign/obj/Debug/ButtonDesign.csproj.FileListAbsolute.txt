@@ -71,3 +71,4 @@ C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\ko\System.Windows.Inter
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.csprojResolveAssemblyReference.cache

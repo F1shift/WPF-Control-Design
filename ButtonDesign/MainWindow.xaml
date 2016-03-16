@@ -10,6 +10,15 @@
         <ResourceDictionary Source="NavigateButtonTemplates.xaml"/>
     </Window.Resources>
     <Grid>
-        <local:NavigateButton x:Name="navigateButton" OuterStrokeThicknessRatio="0.1" InnerStrokeThicknessRatio="0.1" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Click="NavigateButton_Click"/>
+        <local:NavigateButton x:Name="navigateButton" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Click="NavigateButton_Click" MouseDown="navigateButton_MouseDown" RenderTransformOrigin="0.5,0.5">
+            <local:NavigateButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:NavigateButton.RenderTransform>
+        </local:NavigateButton>
     </Grid>
 </Window>

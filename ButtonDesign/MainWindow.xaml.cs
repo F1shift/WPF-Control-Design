@@ -29,5 +29,10 @@ namespace ButtonDesign
         {
             Console.WriteLine("Navigate button clicked!");
         }
+
+        private void navigateButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("Navigate button mouse dowm!");
+        }
     }
 }

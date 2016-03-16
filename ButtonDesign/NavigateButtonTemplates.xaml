@@ -16,9 +16,9 @@
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1.3*"/>
                             <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1.2*"/>
+                            <ColumnDefinition Width="1.65*"/>
                         </Grid.ColumnDefinitions>
                         <Ellipse Name="Bord" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding OuterStrokeThickness}" StrokeDashCap="Round"/>
                         <Path Grid.Row="1" Grid.Column="1" Data="M25,10 L14,20 L25,30" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding InnerStrokeThickness}" StrokeLineJoin="Round" Stretch="Fill"/>
@@ -52,25 +52,32 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        <Trigger Property="ButtonBase.IsPressed" Value="True">
-                            <Setter TargetName="MouseOverMask" Property="Opacity" Value="0"/>
-                            <Setter TargetName="PressedMask" Property="Opacity" Value="100"/>
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="ButtonBase.IsPressed" Value="False"/>
-                                <Condition Property="ButtonBase.IsMouseOver" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="MouseOverMask" Property="Opacity" Value="100"/>
-                            <Setter TargetName="PressedMask" Property="Opacity" Value="0"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="ButtonBase.IsPressed" Value="False"/>
-                                <Condition Property="ButtonBase.IsMouseOver" Value="False"/>
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="PressedMask" Property="Opacity" Value="0"/>
-                        </MultiTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="PressedMask"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="0"
+                                        To="1"
+                                        Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="PressedMask"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1"
+                                        To="0"
+                                        Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

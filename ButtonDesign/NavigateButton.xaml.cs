@@ -42,7 +42,7 @@ namespace ButtonDesign
                 );
         private static FrameworkPropertyMetadata OuterStrokeThicknessRatioPropertyMetaData =
             new FrameworkPropertyMetadata(
-                0.05,
+                0.1,
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault | FrameworkPropertyMetadataOptions.Journal,
                 new PropertyChangedCallback(OuterStrokeThicknessRatioChanged_Callback),
                 null,
@@ -51,7 +51,7 @@ namespace ButtonDesign
                 );
         private static FrameworkPropertyMetadata InnerStrokeThicknessRatioPropertyMetaData =
             new FrameworkPropertyMetadata(
-                0.05,
+                0.12,
                 FrameworkPropertyMetadataOptions.BindsTwoWayByDefault | FrameworkPropertyMetadataOptions.Journal,
                 new PropertyChangedCallback(InnerStrokeThicknessRatioChanged_Callback),
                 null,
