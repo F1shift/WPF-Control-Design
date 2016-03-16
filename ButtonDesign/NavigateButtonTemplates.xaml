@@ -6,6 +6,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType ="local:NavigateButton">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="FadeIn"/>
+                    </ControlTemplate.Resources>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
@@ -19,16 +22,36 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse Name="Bord" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding OuterStrokeThickness}" StrokeDashCap="Round"/>
                         <Path Grid.Row="1" Grid.Column="1" Data="M25,10 L14,20 L25,30" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding InnerStrokeThickness}" StrokeLineJoin="Round" Stretch="Fill"/>
-                        <Ellipse Name="MouseOverMask" Grid.RowSpan="3" Grid.ColumnSpan="3" Fill="{TemplateBinding MouseOverMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
-                        <Ellipse Name="PressedMask" Grid.RowSpan="3" Grid.ColumnSpan="3" Fill="{TemplateBinding PressedMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
+                        <Ellipse Name="MouseOverMask" Grid.RowSpan="3" Opacity="0" Grid.ColumnSpan="3" Fill="{TemplateBinding MouseOverMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
+                        <Ellipse Name="PressedMask" Grid.RowSpan="3" Opacity="0" Grid.ColumnSpan="3" Fill="{TemplateBinding PressedMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="UIElement.IsMouseOver" Value="True">
-                            <Setter TargetName="MouseOverMask" Property="Opacity" Value="100"/>
-                        </Trigger>
-                        <Trigger Property="UIElement.IsMouseOver" Value="False">
-                            <Setter TargetName="MouseOverMask" Property="Opacity" Value="0"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="MouseOverMask"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="0"
+                                        To="1"
+                                        Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="MouseOverMask"
+                                        Storyboard.TargetProperty="Opacity"
+                                        From="1"
+                                        To="0"
+                                        Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                         <Trigger Property="ButtonBase.IsPressed" Value="True">
                             <Setter TargetName="MouseOverMask" Property="Opacity" Value="0"/>
                             <Setter TargetName="PressedMask" Property="Opacity" Value="100"/>

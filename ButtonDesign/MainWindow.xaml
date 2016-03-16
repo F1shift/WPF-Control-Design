@@ -10,6 +10,6 @@
         <ResourceDictionary Source="NavigateButtonTemplates.xaml"/>
     </Window.Resources>
     <Grid>
-        <local:NavigateButton x:Name="navigateButton" OuterStrokeThicknessRatio="0.1" InnerStrokeThicknessRatio="0.1" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" PressedMaskColor="#50D10909" MouseOverMaskColor="#2809C723" Click="NavigateButton_Click"/>
+        <local:NavigateButton x:Name="navigateButton" OuterStrokeThicknessRatio="0.1" InnerStrokeThicknessRatio="0.1" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Click="NavigateButton_Click"/>
     </Grid>
 </Window>
