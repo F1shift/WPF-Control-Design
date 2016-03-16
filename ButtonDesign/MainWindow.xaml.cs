@@ -27,7 +27,7 @@ namespace ButtonDesign
 
         private void NavigateButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Clicked");
+            Console.WriteLine("Navigate button clicked!");
         }
     }
 }

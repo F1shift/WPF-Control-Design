@@ -54,7 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AttachedProperties.cs" />
     <Compile Include="NavigateButton.xaml.cs">
       <DependentUpon>NavigateButton.xaml</DependentUpon>
     </Compile>

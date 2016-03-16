@@ -49,4 +49,3 @@ C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.Properties
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.csproj.GenerateResource.Cache
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.exe
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.pdb
-C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.csprojResolveAssemblyReference.cache
