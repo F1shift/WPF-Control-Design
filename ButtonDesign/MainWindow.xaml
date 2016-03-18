@@ -5,20 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ButtonDesign"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Background="#FF1A1A1D">
     <Window.Resources>
-        <ResourceDictionary Source="NavigateButtonTemplates.xaml"/>
+        <ResourceDictionary Source="ButtonTemplates.xaml"/>
     </Window.Resources>
     <Grid>
-        <local:NavigateButton x:Name="navigateButton" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Click="NavigateButton_Click" MouseDown="navigateButton_MouseDown" RenderTransformOrigin="0.5,0.5">
-            <local:NavigateButton.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
-                    <SkewTransform AngleY="0" AngleX="0"/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </local:NavigateButton.RenderTransform>
-        </local:NavigateButton>
+        <local:NavigateButton x:Name="navigateButton"
+                              Style="{DynamicResource ResourceKey=ExportTXTButtonTemplate}"
+                              Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                              Click="NavigateButton_Click"
+                              MouseDown="navigateButton_MouseDown"
+                              RenderTransformOrigin="0.5,0.5"/>
     </Grid>
 </Window>
