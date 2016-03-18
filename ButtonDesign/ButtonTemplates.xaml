@@ -1,79 +1,78 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ButtonDesign"
-                    xmlns:sys="clr-namespace:System;assembly=System">
-    <Style TargetType="local:NavigateButton">
+                    xmlns:sys="clr-namespace:System;assembly=System" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Style x:Key="NavigateButtonTemplate" TargetType="{x:Type local:NavigateButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType ="local:NavigateButton">
-                    <ControlTemplate.Resources>
-                        <Storyboard x:Key="FadeIn"/>
-                    </ControlTemplate.Resources>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.3*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1.65*"/>
-                        </Grid.ColumnDefinitions>
-                        <Ellipse Name="Bord" Grid.RowSpan="3" Grid.ColumnSpan="3" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding OuterStrokeThickness}" StrokeDashCap="Round"/>
-                        <Path Grid.Row="1" Grid.Column="1" Data="M25,10 L14,20 L25,30" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding InnerStrokeThickness}" StrokeLineJoin="Round" Stretch="Fill"/>
-                        <Ellipse Name="MouseOverMask" Grid.RowSpan="3" Opacity="0" Grid.ColumnSpan="3" Fill="{TemplateBinding MouseOverMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
-                        <Ellipse Name="PressedMask" Grid.RowSpan="3" Opacity="0" Grid.ColumnSpan="3" Fill="{TemplateBinding PressedMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
+                <ControlTemplate TargetType ="{x:Type local:NavigateButton}">
+                    <Grid Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
+                        <Ellipse x:Name="Bord" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding OuterStrokeThickness}" StrokeDashCap="Round"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1.65*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Grid.Row="1" Grid.Column="1" Data="M25,10 L14,20 L25,30" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding InnerStrokeThickness}" StrokeLineJoin="Round" Stretch="Fill"/>
+                        </Grid>
+                        <Ellipse x:Name="MouseOverMask" Opacity="0" Fill="{TemplateBinding MouseOverMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
+                        <Ellipse x:Name="PressedMask" Opacity="0"  Fill="{TemplateBinding PressedMaskColor}" StrokeThickness="0" StrokeDashCap="Round"/>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-                                        Storyboard.TargetName="MouseOverMask"
-                                        Storyboard.TargetProperty="Opacity"
-                                        From="0"
-                                        To="1"
-                                        Duration="0:0:0.2"
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.2"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-                                        Storyboard.TargetName="MouseOverMask"
-                                        Storyboard.TargetProperty="Opacity"
-                                        From="1"
-                                        To="0"
-                                        Duration="0:0:0.2"
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.2"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseDown">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-                                        Storyboard.TargetName="PressedMask"
-                                        Storyboard.TargetProperty="Opacity"
-                                        From="0"
-                                        To="1"
-                                        Duration="0:0:0.025"
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.025"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        <EventTrigger RoutedEvent="PreviewMouseUp">
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseUp">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-                                        Storyboard.TargetName="PressedMask"
-                                        Storyboard.TargetProperty="Opacity"
-                                        From="1"
-                                        To="0"
-                                        Duration="0:0:0.025"
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.025"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -83,14 +82,187 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="ExportTXTButtonTemplate" TargetType="Button">
+    <Style x:Key="ExportTXTButtonTemplate" TargetType="{x:Type local:NavigateButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType ="{x:Type local:NavigateButton}">
-                    <ControlTemplate.Resources>
-                        <Storyboard x:Key="FadeIn"/>
-                    </ControlTemplate.Resources>
-                    <Grid>
+                <ControlTemplate TargetType ="{x:Type local:NavigateButton}" >
+                    <Grid Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
+                        <Path x:Name="mainPath"
+							Data="M0,0 L0,297 210,297 210,90 120,0  z"
+							Fill="{TemplateBinding BorderBrush}"
+							StrokeThickness="0"
+							HorizontalAlignment="Center"
+							Stretch="Uniform"
+                              />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.01*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="0.01*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.01*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.01*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Grid.Row="1" Grid.Column="1"
+								Data="M0,0 L0,297 210,297 210,90 120,0  z"
+								Fill="{TemplateBinding Background}"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								HorizontalAlignment="Center"
+								Stretch="Uniform"
+                              />
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3.5*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Grid.Row="1" Grid.Column="1"
+								Data="M0,0 L1,0" Fill="#FFF4F4F5"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="{Binding ActualWidth, ConverterParameter=0.1, Converter={local:RatioConverter}, ElementName=mainPath}"
+								VerticalAlignment="Top"
+								Stretch="Uniform"
+                              />
+                            <Path Grid.Row="2" Grid.Column="1"
+								Data="M0,0 L1,0" Fill="#FFF4F4F5"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="{Binding ActualWidth, ConverterParameter=0.1, Converter={local:RatioConverter}, ElementName=mainPath}"
+								VerticalAlignment="Top"
+								Stretch="Uniform"
+                              />
+                            <Path Grid.Row="3" Grid.Column="1"
+								Data="M0,0 L1,0" Fill="#FFF4F4F5"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="{Binding ActualWidth, ConverterParameter=0.1, Converter={local:RatioConverter}, ElementName=mainPath}"
+								VerticalAlignment="Top"
+								Stretch="Uniform"
+                              />
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="7*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="11*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Path Grid.Row="0" Grid.Column="1"
+								Data="M0,0 L0,1 1,1 z"
+								Stroke="{TemplateBinding BorderBrush}"
+								Fill="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								Stretch="Fill"
+                                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"
+                                />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="1" Grid.Column="0"
+								x:Name="textBlock" 
+								HorizontalAlignment="Right" Text="TXT" 
+								VerticalAlignment="Top" 
+								FontSize="{Binding ElementName=mainPath, Path=ActualWidth, ConverterParameter=0.5, Converter={local:RatioConverter}}"
+								Foreground="{TemplateBinding Foreground}" FontWeight="Bold"
+                                       >
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Color="White" 
+										BlurRadius="{Binding ActualWidth, ConverterParameter=0.1, Converter={local:RatioConverter}, ElementName=mainPath}" 
+										ShadowDepth="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </Grid>
+                        <Rectangle x:Name="MouseOverMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding MouseOverMaskColor}"
+							Opacity="0"/>
+                        <Rectangle x:Name="PressedMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding PressedMaskColor}"
+							Opacity="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SaveFileButtonTemplate" TargetType="{x:Type local:NavigateButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType ="{x:Type local:NavigateButton}" >
+                    <Grid Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="10*"/>
@@ -101,45 +273,70 @@
                             <ColumnDefinition Width="10*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <Path Data="M0,0 L0,297 210,297 210,90 120,0  z"
-                              Grid.Row="1"
-                              Grid.Column="1"
-                              Fill="{TemplateBinding Background}"
-                              Stroke="{TemplateBinding BorderBrush}"
-                              StrokeThickness="{TemplateBinding Width, Converter={local:RatioConverter}, ConverterParameter=0.1}"
-                              HorizontalAlignment="Center"
-                              Stretch="Uniform"
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Path Name="mainPath" Grid.Row="1" Grid.Column="1"
+								Data="M0,0 L0,100 100,100 100,35 65,0 55,0 55,35 20,35 20,0  z"
+								Fill="{TemplateBinding Background}"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								HorizontalAlignment="Center"
+								Stretch="Uniform"
                               />
-                        <Path Grid.Column="1"
-                              Data="M100,130 L170,130" Fill="#FFF4F4F5"
-                              Grid.Row="1" 
-                              Stroke="{TemplateBinding BorderBrush}"
-                              StrokeThickness="{TemplateBinding Width, Converter={local:RatioConverter}, ConverterParameter=0.05}"
-                              VerticalAlignment="Top"
-                              />
-                        <Path Grid.Column="1"
-                              Data="M100,165 L170,165" Fill="#FFF4F4F5"
-                              Grid.Row="1" 
-                              Stroke="{TemplateBinding BorderBrush}"
-                              StrokeThickness="{TemplateBinding Width, Converter={local:RatioConverter}, ConverterParameter=0.05}"
-                              VerticalAlignment="Top"/>
-                        <Path Grid.Column="1"
-                              Data="M100,200 L170,200" Fill="#FFF4F4F5"
-                              Grid.Row="1" 
-                              Stroke="{TemplateBinding BorderBrush}"
-                              StrokeThickness="{TemplateBinding Width, Converter={local:RatioConverter}, ConverterParameter=0.05}"
-                              VerticalAlignment="Top"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24*"/>
+                                    <RowDefinition Height="53*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="26*"/>
+                                    <ColumnDefinition Width="13*"/>
+                                    <ColumnDefinition Width="38*"/>
+                                </Grid.ColumnDefinitions>
+                                <Path Grid.Row="0" Grid.Column="1"
+								Data="M0,0 L0,1 1,1 1,0 z"
+								Stroke="{TemplateBinding BorderBrush}"
+								Fill="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								Stretch="Fill"
+                                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"
+                                />
+                            </Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35*"/>
+                                    <RowDefinition Height="34*"/>
+                                    <RowDefinition Height="8*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="9*"/>
+                                    <ColumnDefinition Width="57*"/>
+                                    <ColumnDefinition Width="11*"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Grid.Row="1" Grid.Column="1" 
+                                       Stroke="{TemplateBinding BorderBrush}" 
+                                       StrokeThickness="{Binding ElementName=mainPath, Path=ActualWidth, Converter={local:RatioConverter}, ConverterParameter=0.02}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                        <Rectangle x:Name="MouseOverMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding MouseOverMaskColor}"
+							Opacity="0"/>
+                        <Rectangle x:Name="PressedMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding PressedMaskColor}"
+							Opacity="0"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <EventTrigger RoutedEvent="UIElement.MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-    									Storyboard.TargetName="MouseOverMask"
-    									Storyboard.TargetProperty="Opacity"
-    									From="0"
-    									To="1"
-    									Duration="0:0:0.2"
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.2"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -148,11 +345,11 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-    									Storyboard.TargetName="MouseOverMask"
-    									Storyboard.TargetProperty="Opacity"
-    									From="1"
-    									To="0"
-    									Duration="0:0:0.2"
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.2"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -161,11 +358,11 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-    									Storyboard.TargetName="PressedMask"
-    									Storyboard.TargetProperty="Opacity"
-    									From="0"
-    									To="1"
-    									Duration="0:0:0.025"
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.025"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -174,11 +371,11 @@
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation
-    									Storyboard.TargetName="PressedMask"
-    									Storyboard.TargetProperty="Opacity"
-    									From="1"
-    									To="0"
-    									Duration="0:0:0.025"
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.025"
                                         />
                                 </Storyboard>
                             </BeginStoryboard>
@@ -188,5 +385,196 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    <Style x:Key="SaveAsButtonTemplate" TargetType="{x:Type local:NavigateButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType ="{x:Type local:NavigateButton}" >
+                    <Grid Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6*"/>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="21*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="21*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                <Path Name="mainPath" Grid.Row="1" Grid.Column="1"
+								Data="M0,0 L0,100 100,100 100,35 65,0 55,0 55,35 20,35 20,0  z"
+								Fill="{TemplateBinding Background}"
+								Stroke="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								HorizontalAlignment="Center"
+								Stretch="Uniform"
+                              />
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="24*"/>
+                                        <RowDefinition Height="53*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26*"/>
+                                        <ColumnDefinition Width="13*"/>
+                                        <ColumnDefinition Width="38*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Path Grid.Row="0" Grid.Column="1"
+								Data="M0,0 L0,1 1,1 1,0 z"
+								Stroke="{TemplateBinding BorderBrush}"
+								Fill="{TemplateBinding BorderBrush}"
+								StrokeThickness="0"
+								Stretch="Fill"
+                                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"
+                                />
+                                </Grid>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35*"/>
+                                        <RowDefinition Height="34*"/>
+                                        <RowDefinition Height="8*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="57*"/>
+                                        <ColumnDefinition Width="11*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Grid.Row="1" Grid.Column="1" 
+                                       Stroke="{TemplateBinding BorderBrush}" 
+                                       StrokeThickness="{Binding ElementName=mainPath, Path=ActualWidth, Converter={local:RatioConverter}, ConverterParameter=0.02}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                    </Rectangle>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21*"/>
+                                <RowDefinition Height="50*"/>
+                                <RowDefinition Height="6*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="50*"/>
+                                <ColumnDefinition Width="21*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                <Path Grid.Row="1" Grid.Column="1"
+								    Data="M0,0 L0,100 100,100 100,35 65,0 55,0  20,0  z"
+								    Fill="{TemplateBinding BorderBrush}"
+								    HorizontalAlignment="Center"
+								    Stretch="Uniform"
+                                  />
+                                <Path Name="mainPath2" Grid.Row="1" Grid.Column="1"
+								    Data="M0,0 L0,100 100,100 100,35 65,0 55,0 55,35 20,35 20,0  z"
+								    Fill="{TemplateBinding Foreground}"
+								    Stroke="{TemplateBinding BorderBrush}"
+								    StrokeThickness="{Binding RelativeSource={RelativeSource Self}, Path=ActualWidth, Converter={local:RatioConverter}, ConverterParameter=0.02}"
+								    HorizontalAlignment="Center"
+								    Stretch="Uniform"
+                                  />
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="24*"/>
+                                        <RowDefinition Height="53*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="26*"/>
+                                        <ColumnDefinition Width="13*"/>
+                                        <ColumnDefinition Width="38*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Path Grid.Row="0" Grid.Column="1"
+								            Data="M0,0 L0,1 1,1 1,0 z"
+								            Stroke="{TemplateBinding Foreground}"
+								            Fill="{TemplateBinding Foreground}"
+								            StrokeThickness="0"
+								            Stretch="Fill"
+                                            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"
+                                            />  
+                                </Grid>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35*"/>
+                                        <RowDefinition Height="34*"/>
+                                        <RowDefinition Height="8*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="57*"/>
+                                        <ColumnDefinition Width="11*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Grid.Row="1" Grid.Column="1" 
+                                       Stroke="{TemplateBinding BorderBrush}" 
+                                       StrokeThickness="{Binding ElementName=mainPath2, Path=ActualWidth, Converter={local:RatioConverter}, ConverterParameter=0.02}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                                    </Rectangle>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Rectangle x:Name="MouseOverMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding MouseOverMaskColor}"
+							Opacity="0"/>
+                        <Rectangle x:Name="PressedMask"
+							Grid.RowSpan="3" Grid.ColumnSpan="3"
+							Fill="{TemplateBinding PressedMaskColor}"
+							Opacity="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="MouseOverMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.2"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="0"
+										To="1"
+										Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.PreviewMouseUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+										Storyboard.TargetName="PressedMask"
+										Storyboard.TargetProperty="Opacity"
+										From="1"
+										To="0"
+										Duration="0:0:0.025"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

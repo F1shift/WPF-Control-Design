@@ -9,7 +9,7 @@ using System.Windows.Markup;
 
 namespace ButtonDesign
 {
-    class RatioConverter : MarkupExtension, IValueConverter
+    public class RatioConverter : MarkupExtension, IValueConverter
     {
         public static RatioConverter _ratioConverter;
 

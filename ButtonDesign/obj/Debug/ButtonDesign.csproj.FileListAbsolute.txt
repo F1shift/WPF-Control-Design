@@ -72,3 +72,13 @@ C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hans\System.Windows.
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonDesign.csprojResolveAssemblyReference.cache
 C:\Data\GitHub\WPF-Control-Design\ButtonDesign\obj\Debug\ButtonTemplates.baml
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\de\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\es\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\fr\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\it\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\ja\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\ko\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
+C:\Data\GitHub\WPF-Control-Design\ButtonDesign\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
